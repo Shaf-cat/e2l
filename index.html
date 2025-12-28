@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria Green Economy Pilot - Learner Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .required:after {
+            content: " *";
+            color: #ef4444;
+        }
+        .char-counter {
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-align: right;
+            margin-top: 0.25rem;
+        }
+        .char-counter.warning {
+            color: #f59e0b;
+        }
+        .char-counter.error {
+            color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-green-50 to-blue-50">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full space-y-8 bg-white p-8 rounded-xl shadow-2xl">
+            
+            <!-- QR Code Section -->
+            <div class="text-center mb-6 p-4 bg-green-50 rounded-lg border-2 border-green-200">
+                <h3 class="text-lg font-semibold text-green-800 mb-2">
+                    <i class="fas fa-qrcode mr-2"></i>Scan to Register
+                </h3>
+                <p class="text-sm text-gray-600 mb-3">Use your phone camera to scan this code:</p>
+                
+                <!-- QR Code Placeholder -->
+                <div class="inline-block bg-white p-4 rounded-lg shadow-md border-2 border-dashed border-gray-300">
+                    <div class="w-48 h-48 mx-auto bg-gray-100 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-qrcode text-gray-400 text-4xl mb-2"></i>
+                            <p class="text-xs text-gray-500">QR Code Image</p>
+                            <p class="text-xs text-gray-500">(To be generated)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">Scan with phone camera</p>
+                </div>
+                
+                <div class="mt-3 text-xs text-gray-500">
+                    <p><strong>Form URL:</strong> https://greeneconomy.ng/register</p>
+                    <p>Works on any smartphone - no app needed</p>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="text-center">
+                <div class="flex justify-center mb-4">
+                    <div class="w-20 h-20 bg-gradient-to-br from-green-600 to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+                        <i class="fas fa-leaf text-white text-3xl"></i>
+                    </div>
+                </div>
+                <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
+                    Nigeria Green Economy Pilot
+                </h1>
+                <h2 class="mt-2 text-xl font-semibold text-gray-800">
+                    Free 12-Week Programme | International Certificate
+                </h2>
+                <p class="mt-3 text-sm text-gray-600 max-w-2xl mx-auto">
+                    Transform your future with skills in Climate-Smart Agriculture, Solar Energy, or Green Business. 
+                    Join 250-300 Nigerians in this groundbreaking programme starting August 2026.
+                </p>
+                <div class="mt-4 flex justify-center space-x-4 text-sm">
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full">
+                        <i class="fas fa-check-circle mr-1"></i>100% Free
+                    </span>
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+                        <i class="fas fa-certificate mr-1"></i>Certified
+                    </span>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">
+                        <i class="fas fa-briefcase mr-1"></i>Job Ready
+                    </span>
+                </div>
+            </div>
+
+            <!-- Pre-Qualification Screener -->
+            <div id="preQualification" class="border-2 border-yellow-400 bg-yellow-50 p-6 rounded-lg">
+                <h3 class="text-lg font-bold text-yellow-900 mb-4">
+                    <i class="fas fa-clipboard-check mr-2"></i>Quick Eligibility Check
+                </h3>
+                <p class="text-sm text-gray-700 mb-4">
+                    Please answer these questions to confirm you meet the basic requirements:
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-sm font-medium text-gray-900 mb-2 required">
+                            Do you have regular access to the internet?
+                        </label>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center mr-6">
+                                <input type="radio" name="has_internet" value="yes" class="prequalCheck" required>
+                                <span class="ml-2">Yes, I have regular internet access</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="has_internet" value="no" class="prequalCheck">
+                                <span class="ml-2">No, I don't have regular internet</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-sm font-medium text-gray-900 mb-2 required">
+                            Do you own or have regular access to a device (smartphone, tablet, or computer)?
+                        </label>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center mr-6">
+                                <input type="radio" name="has_device" value="yes" class="prequalCheck" required>
+                                <span class="ml-2">Yes, I have a device</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="has_device" value="no" class="prequalCheck">
+                                <span class="ml-2">No, I don't have access</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded-lg">
+                        <label class="block text-sm font-medium text-gray-900 mb-2 required">
+                            Can you commit 15-17 hours per week for 12 weeks (August-October 2026)?
+                        </label>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center mr-6">
+                                <input type="radio" name="can_commit" value="yes" class="prequalCheck" required>
+                                <span class="ml-2">Yes, I can commit this time</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="can_commit" value="no" class="prequalCheck">
+                                <span class="ml-2">No, I cannot commit</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="button" id="checkEligibility" 
+                            class="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-4 rounded-lg transition duration-150">
+                        <i class="fas fa-arrow-right mr-2"></i>Check My Eligibility
+                    </button>
+                </div>
+            </div>
+
+            <!-- Ineligible Message (Hidden) -->
+            <div id="ineligibleMessage" class="bg-red-100 border-2 border-red-400 text-red-800 px-6 py-4 rounded-lg hidden">
+                <div class="flex items-start">
+                    <i class="fas fa-exclamation-triangle text-2xl mr-3 mt-1"></i>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Programme Requirements Not Met</h3>
+                        <p class="text-sm mb-3">
+                            Unfortunately, this programme requires:
+                        </p>
+                        <ul class="text-sm list-disc list-inside space-y-1 mb-3">
+                            <li>Regular internet access</li>
+                            <li>Access to a smartphone, tablet, or computer</li>
+                            <li>15-17 hours per week time commitment</li>
+                        </ul>
+                        <p class="text-sm mb-3">
+                            We will notify you if alternative programmes become available that don't require these.
+                        </p>
+                        <div class="mt-4">
+                            <button type="button" id="joinWaitlist" 
+                                    class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm">
+                                <i class="fas fa-bell mr-1"></i>Join Waitlist for Future Programmes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="bg-green-100 border-2 border-green-400 text-green-700 px-4 py-3 rounded-lg relative hidden">
+                <strong>Success!</strong> Your application has been received. We'll contact you via WhatsApp within 5 working days.
+            </div>
+
+            <!-- Main Registration Form (Hidden Initially) -->
+            <form class="mt-8 space-y-6 hidden" method="POST" id="registrationForm">
+                
+                <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-4 rounded-lg text-center">
+                    <p class="font-semibold">✓ You meet the basic requirements! Please complete your application below.</p>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-user mr-2 text-green-600"></i>Personal Information
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="first_name" class="block text-sm font-medium text-gray-700 required">First Name</label>
+                            <input type="text" id="first_name" name="first_name" required 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   placeholder="Enter your first name">
+                        </div>
+                        <div>
+                            <label for="last_name" class="block text-sm font-medium text-gray-700 required">Last Name (Surname)</label>
+                            <input type="text" id="last_name" name="last_name" required 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   placeholder="Enter your surname">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label for="age_range" class="block text-sm font-medium text-gray-700 required">Age Range</label>
+                            <select id="age_range" name="age_range" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select your age range</option>
+                                <option value="14-17">14-17 years</option>
+                                <option value="18-25">18-25 years</option>
+                                <option value="26-35">26-35 years</option>
+                                <option value="36-45">36-45 years</option>
+                                <option value="46-55">46-55 years</option>
+                                <option value="56+">56+ years</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="gender" class="block text-sm font-medium text-gray-700 required">Gender</label>
+                            <select id="gender" name="gender" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Non-binary">Non-binary</option>
+                                <option value="Prefer not to say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-phone mr-2 text-green-600"></i>Contact Information
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="whatsapp_number" class="block text-sm font-medium text-gray-700 required">
+                                WhatsApp Number
+                            </label>
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-600 text-sm">
+                                    +234
+                                </span>
+                                <input type="tel" id="whatsapp_number" name="whatsapp_number" required 
+                                       class="flex-1 block w-full rounded-none rounded-r-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                       placeholder="8012345678"
+                                       pattern="[0-9]{10}"
+                                       title="Enter 10-digit phone number without country code">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Primary contact method - we'll reach you here</p>
+                        </div>
+                        <div>
+                            <label for="phone_number" class="block text-sm font-medium text-gray-700">
+                                Alternative Phone Number
+                            </label>
+                            <div class="mt-1 flex rounded-md shadow-sm">
+                                <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-100 text-gray-600 text-sm">
+                                    +234
+                                </span>
+                                <input type="tel" id="phone_number" name="phone_number" 
+                                       class="flex-1 block w-full rounded-none rounded-r-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                                       placeholder="8098765432 (optional)"
+                                       pattern="[0-9]{10}">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Optional - for SMS if WhatsApp unavailable</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email" 
+                               class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="yourname@example.com (optional)">
+                        <p class="text-xs text-gray-500 mt-1">Helpful but not required</p>
+                    </div>
+                </div>
+
+                <!-- Location Information -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-map-marker-alt mr-2 text-green-600"></i>Location
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="state" class="block text-sm font-medium text-gray-700 required">State</label>
+                            <select id="state" name="state" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select your state</option>
+                                <option value="Abia">Abia</option>
+                                <option value="Adamawa">Adamawa</option>
+                                <option value="Akwa Ibom">Akwa Ibom</option>
+                                <option value="Anambra">Anambra</option>
+                                <option value="Bauchi">Bauchi</option>
+                                <option value="Bayelsa">Bayelsa</option>
+                                <option value="Benue">Benue</option>
+                                <option value="Borno">Borno</option>
+                                <option value="Cross River">Cross River</option>
+                                <option value="Delta">Delta</option>
+                                <option value="Ebonyi">Ebonyi</option>
+                                <option value="Edo">Edo</option>
+                                <option value="Ekiti">Ekiti</option>
+                                <option value="Enugu">Enugu</option>
+                                <option value="FCT">Federal Capital Territory (FCT)</option>
+                                <option value="Gombe">Gombe</option>
+                                <option value="Imo">Imo</option>
+                                <option value="Jigawa">Jigawa</option>
+                                <option value="Kaduna">Kaduna</option>
+                                <option value="Kano">Kano</option>
+                                <option value="Katsina">Katsina</option>
+                                <option value="Kebbi">Kebbi</option>
+                                <option value="Kogi">Kogi</option>
+                                <option value="Kwara">Kwara</option>
+                                <option value="Lagos">Lagos</option>
+                                <option value="Nasarawa">Nasarawa</option>
+                                <option value="Niger">Niger</option>
+                                <option value="Ogun">Ogun</option>
+                                <option value="Ondo">Ondo</option>
+                                <option value="Osun">Osun</option>
+                                <option value="Oyo">Oyo</option>
+                                <option value="Plateau">Plateau</option>
+                                <option value="Rivers">Rivers</option>
+                                <option value="Sokoto">Sokoto</option>
+                                <option value="Taraba">Taraba</option>
+                                <option value="Yobe">Yobe</option>
+                                <option value="Zamfara">Zamfara</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="lga" class="block text-sm font-medium text-gray-700 required">Local Government Area (LGA)</label>
+                            <input type="text" id="lga" name="lga" required 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   placeholder="Enter your LGA">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label for="community" class="block text-sm font-medium text-gray-700 required">Town/Community</label>
+                            <input type="text" id="community" name="community" required 
+                                   class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                   placeholder="Enter your town or community">
+                        </div>
+                        <div>
+                            <label for="area_type" class="block text-sm font-medium text-gray-700 required">Area Type</label>
+                            <select id="area_type" name="area_type" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select area type</option>
+                                <option value="Urban">Urban (city/large town)</option>
+                                <option value="Peri-Urban">Peri-Urban (outskirts of city)</option>
+                                <option value="Rural">Rural (village/countryside)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Access Details -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-wifi mr-2 text-green-600"></i>Digital Access Details
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="internet_frequency" class="block text-sm font-medium text-gray-700 required">
+                                How often do you access the internet?
+                            </label>
+                            <select id="internet_frequency" name="internet_frequency" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select frequency</option>
+                                <option value="Daily">Daily</option>
+                                <option value="Several times a week">Several times a week</option>
+                                <option value="Once a week">Once a week</option>
+                                <option value="Occasionally">Occasionally</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="device_type" class="block text-sm font-medium text-gray-700 required">
+                                What device will you use for learning?
+                            </label>
+                            <select id="device_type" name="device_type" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select device type</option>
+                                <option value="Smartphone">Smartphone</option>
+                                <option value="Tablet">Tablet</option>
+                                <option value="Laptop/Computer">Laptop/Computer</option>
+                                <option value="Shared smartphone">Shared smartphone</option>
+                                <option value="Shared computer">Shared computer</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="device_ownership" class="block text-sm font-medium text-gray-700 required">
+                            Device ownership
+                        </label>
+                        <select id="device_ownership" name="device_ownership" required 
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Select ownership status</option>
+                            <option value="I own the device">I own the device</option>
+                            <option value="Shared with family">Shared with family</option>
+                            <option value="Borrowed from friend/family">Borrowed from friend/family</option>
+                            <option value="Access at work">Access at work</option>
+                            <option value="Access at community centre">Access at community centre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Background Information -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-2 text-green-600"></i>Background
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="education_level" class="block text-sm font-medium text-gray-700 required">
+                                Highest level of education completed
+                            </label>
+                            <select id="education_level" name="education_level" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select education level</option>
+                                <option value="No formal education">No formal education</option>
+                                <option value="Primary">Primary school</option>
+                                <option value="JSS">Junior Secondary (JSS)</option>
+                                <option value="SSS">Senior Secondary (SSS/WAEC)</option>
+                                <option value="OND/NCE">OND/NCE</option>
+                                <option value="HND/Bachelor's">HND/Bachelor's degree</option>
+                                <option value="Postgraduate">Postgraduate degree</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="employment_status" class="block text-sm font-medium text-gray-700 required">
+                                Current employment status
+                            </label>
+                            <select id="employment_status" name="employment_status" required 
+                                    class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                                <option value="">Select status</option>
+                                <option value="Employed (full-time)">Employed (full-time)</option>
+                                <option value="Employed (part-time)">Employed (part-time)</option>
+                                <option value="Self-employed/Business owner">Self-employed/Business owner</option>
+                                <option value="Unemployed">Unemployed</option>
+                                <option value="Student">Student</option>
+                                <option value="Farmer">Farmer</option>
+                                <option value="Informal sector worker">Informal sector worker</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="current_occupation" class="block text-sm font-medium text-gray-700 required">
+                            Current occupation or main activity
+                        </label>
+                        <input type="text" id="current_occupation" name="current_occupation" required 
+                               class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="e.g., Teacher, Trader, Farmer, Job seeker">
+                    </div>
+
+                    <div class="mt-4">
+                        <label for="monthly_income" class="block text-sm font-medium text-gray-700">
+                            Approximate monthly income (Optional)
+                        </label>
+                        <select id="monthly_income" name="monthly_income" 
+                                class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <option value="">Prefer not to say</option>
+                            <option value="No income">No income</option>
+                            <option value="Under ₦30,000">Under ₦30,000</option>
+                            <option value="₦30,000 - ₦50,000">₦30,000 - ₦50,000</option>
+                            <option value="₦50,000 - ₦100,000">₦50,000 - ₦100,000</option>
+                            <option value="₦100,000 - ₦200,000">₦100,000 - ₦200,000</option>
+                            <option value="Over ₦200,000">Over ₦200,000</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Programme Interest -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-lg border-2 border-green-300">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-graduation-cap mr-2 text-green-600"></i>Programme Interest
+                    </h3>
+                    
+                    <div class="bg-white p-4 rounded-lg mb-4">
+                        <label class="block text-sm font-medium text-gray-900 mb-3 required">
+                            Which Green Economy track(s) are you interested in? (Select 1-3)
+                        </label>
+                        <p class="text-xs text-gray-600 mb-3">
+                            All learners complete a 4-week Foundation Module together, then specialise in ONE track. 
+                            You can express interest in multiple areas and finalize after the Foundation Module.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <label class="flex items-start p-3 border-2 border-gray-200 rounded-lg hover:border-green-500 cursor-pointer transition duration-150">
+                                <input type="checkbox" name="track_interest[]" value="Agriculture" 
+                                       class="mt-1 rounded border-gray-300 text-green-600 shadow-sm focus:ring-green-500 track-checkbox">
+                                <div class="ml-3">
+                                    <div class="font-semibold text-gray-900">
+                                        <i class="fas fa-seedling text-green-600 mr-2"></i>Green Agriculture & Natural Resources
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">
+                                        Climate-smart farming, water management, post-harvest value addition
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start p-3 border-2 border-gray-200 rounded-lg hover:border-yellow-500 cursor-pointer transition duration-150">
+                                <input type="checkbox" name="track_interest[]" value="Energy" 
+                                       class="mt-1 rounded border-gray-300 text-yellow-600 shadow-sm focus:ring-yellow-500 track-checkbox">
+                                <div class="ml-3">
+                                    <div class="font-semibold text-gray-900">
+                                        <i class="fas fa-sun text-yellow-600 mr-2"></i>Green Energy & Mobility
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">
+                                        Solar installation, energy efficiency, solar business setup
+                                    </p>
+                                </div>
+                            </label>
+
+                            <label class="flex items-start p-3 border-2 border-gray-200 rounded-lg hover:border-blue-500 cursor-pointer transition duration-150">
+                                <input type="checkbox" name="track_interest[]" value="Business" 
+                                       class="mt-1 rounded border-gray-300 text-blue-600 shadow-sm focus:ring-blue-500 track-checkbox">
+                                <div class="ml-3">
+                                    <div class="font-semibold text-gray-900">
+                                        <i class="fas fa-store text-blue-600 mr-2"></i>Green Business & Economy
+                                    </div>
+                                    <p class="text-xs text-gray-600 mt-1">
+                                        Green entrepreneurship, access to finance, sustainable business models
+                                    </p>
+                                </div>
+                            </label>
+                        </div>
+                        <p id="trackError" class="text-xs text-red-600 mt-2 hidden">
+                            Please select at least 1 track (maximum 3)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Motivation & Goals -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-lightbulb mr-2 text-green-600"></i>Your Motivation & Goals
+                    </h3>
+                    
+                    <div class="mb-4">
+                        <label for="motivation" class="block text-sm font-medium text-gray-700 required">
+                            Why do you want to join this programme? (Maximum 100 words)
+                        </label>
+                        <textarea id="motivation" name="motivation" rows="4" required maxlength="700"
+                                  class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                  placeholder="Share your reasons for wanting to join..."></textarea>
+                        <div id="motivationCounter" class="char-counter">0 / ~100 words</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="learning_goals" class="block text-sm font-medium text-gray-700 required">
+                            What do you hope to achieve from this programme? (Maximum 100 words)
+                        </label>
+                        <textarea id="learning_goals" name="learning_goals" rows="4" required maxlength="700"
+                                  class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                  placeholder="Describe your learning goals..."></textarea>
+                        <div id="goalsCounter" class="char-counter">0 / ~100 words</div>
+                    </div>
+
+                    <div>
+                        <label for="skills_application" class="block text-sm font-medium text-gray-700 required">
+                            How will you apply these skills after completing the programme? (Maximum 100 words)
+                        </label>
+                        <textarea id="skills_application" name="skills_application" rows="4" required maxlength="700"
+                                  class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                  placeholder="Explain how you will use your new skills..."></textarea>
+                        <div id="applicationCounter" class="char-counter">0 / ~100 words</div>
+                    </div>
+                </div>
+
+                <!-- Commitment & Consent -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-handshake mr-2 text-green-600"></i>Commitment & Consent
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5 mt-1">
+                                <input id="time_commitment" name="time_commitment" type="checkbox" required 
+                                       class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="time_commitment" class="font-medium text-gray-700">
+                                    I confirm I can commit 15-17 hours per week for 12 weeks (August-October 2026) *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5 mt-1">
+                                <input id="genuine_interest" name="genuine_interest" type="checkbox" required 
+                                       class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="genuine_interest" class="font-medium text-gray-700">
+                                    I am genuinely interested in developing green economy skills and applying them *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5 mt-1">
+                                <input id="consent_contact" name="consent_contact" type="checkbox" required 
+                                       class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="consent_contact" class="font-medium text-gray-700">
+                                    I agree to be contacted via WhatsApp, phone, and/or email about this programme *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5 mt-1">
+                                <input id="consent_data" name="consent_data" type="checkbox" required 
+                                       class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="consent_data" class="font-medium text-gray-700">
+                                    I agree to my data being used for programme administration, research, and impact reporting *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5 mt-1">
+                                <input id="information_accuracy" name="information_accuracy" type="checkbox" required 
+                                       class="focus:ring-green-500 h-4 w-4 text-green-600 border-gray-300 rounded">
+                            </div>
+                            <div class="ml-3 text-sm">
+                                <label for="information_accuracy" class="font-medium text-gray-700">
+                                    I confirm that all information provided is accurate and truthful *
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hidden fields -->
+                <input type="hidden" name="source" value="qr_code">
+                <input type="hidden" name="application_date" id="application_date">
+                <input type="hidden" name="internet_access_confirmed" value="yes">
+                <input type="hidden" name="device_access_confirmed" value="yes">
+                <input type="hidden" name="time_commitment_confirmed" value="yes">
+
+                <!-- Submit Button -->
+                <div class="bg-gradient-to-r from-green-600 to-blue-600 p-6 rounded-lg">
+                    <button type="submit" 
+                            class="group relative w-full flex justify-center py-4 px-4 border border-transparent text-base font-bold rounded-lg text-green-600 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition duration-150 ease-in-out shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Submit My Application
+                    </button>
+                    <p class="text-xs text-center text-white mt-3">
+                        <i class="fas fa-lock mr-1"></i>
+                        Your information is secure and confidential
+                    </p>
+                </div>
+
+                <p class="text-xs text-center text-gray-500">
+                    By submitting this application, you are expressing interest in the Nigeria Green Economy Pilot Programme. 
+                    We will review all applications and contact shortlisted candidates by WhatsApp in March 2026. 
+                    The programme is completely free - no fees at any stage.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const preQualSection = document.getElementById('preQualification');
+            const registrationForm = document.getElementById('registrationForm');
+            const ineligibleMessage = document.getElementById('ineligibleMessage');
+            const checkEligibilityBtn = document.getElementById('checkEligibility');
+
+            // Check eligibility
+            checkEligibilityBtn.addEventListener('click', function() {
+                const hasInternet = document.querySelector('input[name="has_internet"]:checked');
+                const hasDevice = document.querySelector('input[name="has_device"]:checked');
+                const canCommit = document.querySelector('input[name="can_commit"]:checked');
+
+                if (!hasInternet || !hasDevice || !canCommit) {
+                    alert('Please answer all three questions.');
+                    return;
+                }
+
+                const isEligible = hasInternet.value === 'yes' && 
+                                  hasDevice.value === 'yes' && 
+                                  canCommit.value === 'yes';
+
+                if (isEligible) {
+                    preQualSection.classList.add('hidden');
+                    registrationForm.classList.remove('hidden');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    preQualSection.classList.add('hidden');
+                    ineligibleMessage.classList.remove('hidden');
+                }
+            });
+
+            // Waitlist button (placeholder)
+            document.getElementById('joinWaitlist').addEventListener('click', function() {
+                alert('Waitlist functionality to be implemented. We will notify you of future opportunities.');
+            });
+
+            // Track selection validation
+            const trackCheckboxes = document.querySelectorAll('.track-checkbox');
+            const trackError = document.getElementById('trackError');
+            
+            trackCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const checkedCount = document.querySelectorAll('.track-checkbox:checked').length;
+                    if (checkedCount > 3) {
+                        this.checked = false;
+                        trackError.textContent = 'Maximum 3 tracks allowed';
+                        trackError.classList.remove('hidden');
+                    } else {
+                        trackError.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Word counters for text areas
+            function updateCounter(textareaId, counterId) {
+                const textarea = document.getElementById(textareaId);
+                const counter = document.getElementById(counterId);
+                
+                textarea.addEventListener('input', function() {
+                    const text = this.value.trim();
+                    const words = text ? text.split(/\s+/).length : 0;
+                    counter.textContent = `${words} / ~100 words`;
+                    
+                    if (words > 100) {
+                        counter.classList.add('warning');
+                    } else {
+                        counter.classList.remove('warning');
+                    }
+                    
+                    if (words > 120) {
+                        counter.classList.add('error');
+                    } else {
+                        counter.classList.remove('error');
+                    }
+                });
+            }
+
+            updateCounter('motivation', 'motivationCounter');
+            updateCounter('learning_goals', 'goalsCounter');
+            updateCounter('skills_application', 'applicationCounter');
+
+            // Form submission
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate track selection
+                const checkedTracks = document.querySelectorAll('.track-checkbox:checked');
+                if (checkedTracks.length === 0) {
+                    trackError.textContent = 'Please select at least 1 track';
+                    trackError.classList.remove('hidden');
+                    document.querySelector('.track-checkbox').focus();
+                    return;
+                }
+                
+                // Set application date
+                document.getElementById('application_date').value = new Date().toISOString();
+                
+                // Show success message
+                document.getElementById('successMessage').classList.remove('hidden');
+                registrationForm.reset();
+                
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+                
+                // In production, this would submit to server
+                console.log('Form submitted with data:', new FormData(this));
+            });
+        });
+    </script>
+</body>
+</html>
